@@ -17,6 +17,7 @@ def main():
     setup(
         name='konst',
         version=_read_version(),
+        description='Effortless, meaningless, DRY constants',
         packages=find_packages(exclude=['tests']),
         python_requires=">=3.6",
         extras_require={'dev': ['isort', 'black', 'pytest', 'pytest-watch']},
