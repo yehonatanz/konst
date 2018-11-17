@@ -1,0 +1,8 @@
+[tool.black]
+py36 = true
+skip-string-normalization = true
+
+[tools.isort]
+line_negth = 88
+multi_line_output = 3
+order_by_type = true

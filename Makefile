@@ -1,12 +1,18 @@
+all: format test
+
 format:
-	isort -ot -rc -y .
-	black -S --py36 .
+	isort --recursive -y . 
+	black .
+
+test-format:
+	isort -c -rc .
+	black --check .
 
 clean:
 	find -name *.py[co] -delete
 	find -name __pycache__ -delete
 
-test: clean
+test: clean	
 	py.test tests --cov=konst --cov=tests
 
 watch: clean
@@ -18,4 +24,4 @@ install:
 dev:
 	pip install -e .[dev]
 
-pre-commit: format test
+pre-commit: test-format test
