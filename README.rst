@@ -22,3 +22,14 @@ Effortless, meaningless, DRY constants
     
     assert RED == 'RED'
     assert FLOWER.name == 'FLOWER'
+
+This module supplies dynamic, created-on-import constants without the need for this annoying duplication:
+
+.. code-block:: python
+
+    CONSTANT_NAME = 'CONSTANT_NAME'
+
+Supports both string and symbolic constants (immutable, interned objects with no meaning beyond their name and identity).
+
+TODO:
+    Integer constants - will be supported once I'll figure a method to give them reproducible values
