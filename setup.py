@@ -20,7 +20,9 @@ def main():
         description='Effortless, meaningless, DRY constants',
         packages=find_packages(exclude=['tests']),
         python_requires=">=3.6",
-        extras_require={'dev': ['isort', 'black', 'pytest', 'pytest-watch']},
+        extras_require={
+            'dev': ['isort', 'black', 'pytest', 'pytest-watch', 'pytest-cov']
+        },
         classifiers=(
             'License :: OSI Approved :: MIT License',
             'Programming Language :: Python :: 3.6',

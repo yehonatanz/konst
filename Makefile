@@ -7,7 +7,7 @@ clean:
 	find -name __pycache__ -delete
 
 test: clean
-	py.test tests
+	py.test tests --cov=konst --cov=tests
 
 watch: clean
 	ptw
