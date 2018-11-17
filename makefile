@@ -28,7 +28,7 @@ dev:
 clean-dist:
 	rm -rf dist/ build/
 
-dist: clean-dist
+dist: format test clean-dist
 	python setup.py sdist bdist_wheel
 
 publish: dist
