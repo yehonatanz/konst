@@ -24,3 +24,9 @@ def test_symbol_is_immutable():
         BLUE.name = 3
     with pytest.raises(TypeError):
         del BLUE.name
+
+
+def test_symbol_repr():
+    from konst.symbol import YELLOW
+
+    assert repr(YELLOW) == 'YELLOW'
