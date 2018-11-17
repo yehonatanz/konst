@@ -9,10 +9,11 @@ test-format:
 	black --check .
 
 clean:
-	find -name *.py[co] -delete
-	find -name __pycache__ -delete
+	# This resloves to find on both unix and windows git bash environments
+	`which -a find | grep usr | head -n1` -name *.py[co] -delete
+	`which -a find | grep usr | head -n1` -name __pycache__ -delete
 
-test: clean	
+test: clean
 	py.test tests --cov=konst --cov=tests
 
 watch: clean
