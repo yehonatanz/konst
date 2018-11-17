@@ -24,4 +24,13 @@ install:
 dev:
 	pip install -e .[dev]
 
+clean-dist:
+	rm -rf dist/ build/
+
+dist: clean-dist
+	python setup.py sdist bdist_wheel
+
+publish: dist
+	twine upload dist/*
+
 pre-commit: test-format test
