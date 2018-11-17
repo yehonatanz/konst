@@ -10,6 +10,7 @@ def _read_version():
         for line in f:
             if line.startswith('__version__'):
                 return line.split('=')[-1].strip().strip('\'"')
+        raise ValueError('Could not find __version__')
 
 
 def main():
@@ -18,6 +19,7 @@ def main():
         version=_read_version(),
         packages=find_packages(exclude=['tests']),
         python_requires=">=3.6",
+        extras_require={'dev': ['isort', 'black', 'pytest', 'pytest-watch']},
         classifiers=(
             'License :: OSI Approved :: MIT License',
             'Programming Language :: Python :: 3.6',
