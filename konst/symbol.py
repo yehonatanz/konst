@@ -19,9 +19,7 @@ class Symbol:
         object.__setattr__(self, attr, value)
 
     def __delattr__(self, attr):
-        if hasattr(self, attr):
-            raise TypeError(f'Symbol {self!r} is immutable, cannot delete {attr!r}')
-        object.__delattr__(self, attr, value)
+        raise TypeError(f'Symbol {self!r} is immutable, cannot delete {attr!r}')
 
 
 def __getattr__(attr):
